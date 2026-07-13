@@ -1,13 +1,14 @@
-import { ArrowRight, BarChart3, CheckCircle2, GraduationCap, Sparkles, Users, Wallet } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, CheckCircle2, GraduationCap, NotebookPen, Sparkles, UserCheck, Users, Wallet } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 
-const kpis = [
-  { label: "Total facturé", value: "12,4 M", icon: Wallet, bg: "bg-blue-500/10", text: "text-blue-600" },
-  { label: "Encaissé", value: "84 %", icon: CheckCircle2, bg: "bg-emerald-500/10", text: "text-emerald-600" },
-  { label: "Élèves", value: "1 248", icon: Users, bg: "bg-violet-500/10", text: "text-violet-600" },
+const modules = [
+  { label: "Élèves", icon: Users, grad: "from-blue-500 to-blue-600" },
+  { label: "Notes & Bulletins", icon: NotebookPen, grad: "from-violet-500 to-purple-600" },
+  { label: "Examens", icon: GraduationCap, grad: "from-indigo-500 to-blue-600" },
+  { label: "Présences", icon: UserCheck, grad: "from-emerald-500 to-teal-600" },
+  { label: "Comptabilité", icon: Wallet, grad: "from-amber-500 to-orange-600" },
+  { label: "Statistiques", icon: BarChart3, grad: "from-sky-500 to-blue-600" },
 ];
-
-const months = ["Avr", "Mai", "Jun", "Jul", "Aoû", "Sep"];
 
 export function HeroSection() {
   return (
@@ -77,75 +78,60 @@ export function HeroSection() {
               <ArrowRight className="w-5 h-5 text-emerald-600 -rotate-45" />
             </div>
 
-            {/* Fenêtre application */}
+            {/* Carte flottante : élèves */}
+            <div className="float-soft hidden sm:flex items-center gap-3 absolute top-16 -left-4 md:-left-9 z-20 card px-3.5 py-2.5 shadow-xl">
+              <div className="inline-flex p-2 rounded-xl bg-linear-to-br from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/30">
+                <Users className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-semibold leading-none">Nouvel élève</div>
+                <div className="text-[11px] text-muted mt-0.5">Inscription enregistrée</div>
+              </div>
+              <CheckCircle2 className="w-5 h-5 text-blue-500" />
+            </div>
+
+            {/* Fenêtre application — page d'accueil */}
             <div className="card overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-surface">
                 <span className="w-3 h-3 rounded-full bg-red-400/70" />
                 <span className="w-3 h-3 rounded-full bg-amber-400/70" />
                 <span className="w-3 h-3 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-xs text-muted">Dalibi — Tableau de bord</span>
+                <span className="ml-3 text-xs text-muted">Dalibi — Accueil</span>
               </div>
 
               <div className="p-4 sm:p-5 space-y-4">
-                {/* En-tête */}
+                {/* En-tête façon page d'accueil */}
                 <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-bold">Tableau de bord</div>
-                    <div className="text-[11px] text-muted">Année scolaire 2024-2025 · Directeur</div>
+                  <div className="flex items-center gap-1.5 text-blue-600">
+                    <BookOpen className="w-4 h-4" />
+                    <span className="text-sm font-bold">Dalibi</span>
                   </div>
-                  <span className="text-[11px] font-medium text-primary bg-primary/10 border border-primary/20 rounded-full px-2.5 py-1">
-                    2024-2025
+                  <span className="inline-flex items-center text-[10px] font-medium text-white bg-blue-600 rounded-lg px-2 py-1">
+                    Se connecter
                   </span>
                 </div>
 
-                {/* KPIs */}
-                <div className="grid grid-cols-3 gap-3">
-                  {kpis.map((k) => (
-                    <div key={k.label} className={`rounded-xl p-3 ${k.bg}`}>
-                      <div className="flex items-start justify-between">
-                        <div className="min-w-0">
-                          <p className="text-[9px] uppercase tracking-wide text-muted truncate">{k.label}</p>
-                          <p className={`text-base font-bold mt-1 ${k.text}`}>{k.value}</p>
-                        </div>
-                        <k.icon className={`w-4 h-4 shrink-0 ${k.text}`} />
+                {/* Titre */}
+                <div className="text-center pt-1">
+                  <div className="text-base font-bold">
+                    Bienvenue sur <span className="text-blue-600">Dalibi</span>
+                  </div>
+                  <div className="text-[11px] text-muted mt-0.5">Choisissez un module pour commencer.</div>
+                </div>
+
+                {/* Cartes de modules */}
+                <div className="grid grid-cols-3 gap-2.5">
+                  {modules.map((m) => (
+                    <div key={m.label} className="rounded-xl border border-border p-2.5">
+                      <div className={`inline-flex p-1.5 rounded-lg bg-linear-to-br ${m.grad} text-white shadow-sm`}>
+                        <m.icon className="w-3.5 h-3.5" />
+                      </div>
+                      <div className="text-[11px] font-semibold mt-1.5 leading-tight">{m.label}</div>
+                      <div className="mt-1 inline-flex items-center gap-0.5 text-[9px] font-medium text-blue-600">
+                        Se connecter <ArrowRight className="w-2.5 h-2.5" />
                       </div>
                     </div>
                   ))}
-                </div>
-
-                {/* Graphe encaissements */}
-                <div className="rounded-xl border border-border p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2 text-sm font-semibold">
-                      <BarChart3 className="w-4 h-4 text-primary" /> Encaissements — 6 derniers mois
-                    </div>
-                    <span className="text-xs text-emerald-600 font-medium">+12 %</span>
-                  </div>
-                  <svg viewBox="0 0 320 110" className="w-full h-24" preserveAspectRatio="none" aria-hidden>
-                    <defs>
-                      <linearGradient id="heroArea" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="var(--brand-1)" stopOpacity="0.35" />
-                        <stop offset="100%" stopColor="var(--brand-1)" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M8 78 C38 78 50 62 72 62 C96 62 112 70 134 70 C160 70 176 46 198 46 C222 46 240 40 258 40 C282 40 296 26 312 26 L312 102 L8 102 Z"
-                      fill="url(#heroArea)"
-                    />
-                    <path
-                      d="M8 78 C38 78 50 62 72 62 C96 62 112 70 134 70 C160 70 176 46 198 46 C222 46 240 40 258 40 C282 40 296 26 312 26"
-                      fill="none"
-                      stroke="var(--brand-1)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <circle cx="312" cy="26" r="3.5" fill="var(--brand-1)" />
-                  </svg>
-                  <div className="flex justify-between mt-2">
-                    {months.map((m) => (
-                      <span key={m} className="text-[10px] text-muted">{m}</span>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
