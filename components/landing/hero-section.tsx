@@ -1,8 +1,5 @@
 import { ArrowRight, BarChart3, CheckCircle2, GraduationCap, Sparkles, Users, Wallet } from "lucide-react";
 import { SiGithub } from "react-icons/si";
-import { quickStats } from "./data";
-
-const heroAvatarIds = ["avatar-1", "avatar-2", "avatar-3", "avatar-4"];
 
 const kpis = [
   { label: "Total facturé", value: "12,4 M", icon: Wallet, bg: "bg-blue-500/10", text: "text-blue-600" },
@@ -38,39 +35,13 @@ export function HeroSection() {
               réunit toute la vie scolaire dans une plateforme claire, rapide et sécurisée.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-10 gs-fade-up">
+            <div className="flex flex-col sm:flex-row gap-3 gs-fade-up">
               <a href="#contact" className="btn btn-primary text-base px-6 py-3.5">
                 Demander une démo gratuite <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#modules" className="btn btn-secondary text-base px-6 py-3.5">
                 Voir les fonctionnalités
               </a>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 gs-fade-up">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {heroAvatarIds.map((id) => (
-                    <div
-                      key={id}
-                      className="w-9 h-9 rounded-full bg-linear-to-br from-brand-1 to-brand-3 border-2 border-background"
-                    />
-                  ))}
-                </div>
-                <p className="text-sm text-muted">
-                  Conçu pour les écoles
-                  <br className="hidden sm:block" /> d&apos;Afrique de l&apos;Ouest
-                </p>
-              </div>
-
-              <div className="flex gap-6">
-                {quickStats.slice(0, 2).map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-2xl font-bold">{stat.value}</div>
-                    <div className="text-xs text-muted">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
