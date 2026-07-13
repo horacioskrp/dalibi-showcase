@@ -6,6 +6,7 @@ import { AutomationSection } from "@/components/landing/automation-section";
 import { CapabilitiesSection } from "@/components/landing/capabilities-section";
 import { DigitalizationSection } from "@/components/landing/digitalization-section";
 import { ContributionSection } from "@/components/landing/contribution-section";
+import { HeroHighlightsSection } from "@/components/landing/hero-highlights-section";
 import { HeroSection } from "@/components/landing/hero-section";
 import { LandingFooter } from "@/components/landing/landing-footer";
 import { ModulesSection } from "@/components/landing/modules-section";
@@ -25,6 +26,7 @@ export function LandingPage() {
     <main ref={rootRef} className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <HeroSection />
+      <HeroHighlightsSection />
       <DigitalizationSection />
       <AutomationSection />
       <AudiencesSection />
