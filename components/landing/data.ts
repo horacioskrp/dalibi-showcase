@@ -84,7 +84,7 @@ export const audiences: AudienceCard[] = [
     tagline: "La saisie des notes, simplifiée",
     icon: GraduationCap,
     points: [
-      "Saisie par trimestre ou semestre selon la classe",
+      "Tableau de bord personnalisé : emploi du temps du jour, notes à saisir",
       "Moyennes pondérées calculées automatiquement",
       "Examens officiels et réclamations de notes",
     ],
@@ -106,8 +106,8 @@ export const audiences: AudienceCard[] = [
     tagline: "Un portail dédié aux familles",
     icon: Users,
     points: [
-      "Notes et bulletins consultables en ligne",
-      "Présences, scolarité et solde en temps réel",
+      "Synthèse par enfant : moyenne, assiduité, écolage, dernier bulletin",
+      "Notes, bulletins PDF, présences et solde en temps réel",
       "Accès sécurisé par compte parent ou élève",
     ],
   },
@@ -136,9 +136,10 @@ export const featureColumns: FeatureColumn[] = [
     subtitle: "Piloter l'ecole en temps reel",
     icon: Gauge,
     points: [
-      "Tableau de bord avec indicateurs et graphiques, filtre par annee",
+      "Tableaux de bord adaptes au role, filtre par annee academique",
       "Alertes sur les eleves en retard de paiement",
-      "Statistiques effectifs, presences et finances",
+      "Statistiques MEPSTA : effectifs, parite, recouvrement, examens",
+      "Roles personnalisables sans code, 2FA pour les comptes sensibles",
     ],
   },
   {
@@ -148,8 +149,8 @@ export const featureColumns: FeatureColumn[] = [
     points: [
       "Cycles trimestre et semestre configurables par type de classe",
       "Moyennes ponderees par coefficients, calcul parametrable",
+      "Bulletins figes : mentions configurables, PDF individuel ou toute la classe",
       "Evaluations par classe, examens officiels et reclamations de notes",
-      "Authentification a deux facteurs (2FA) pour les comptes sensibles",
     ],
   },
   {
@@ -252,7 +253,7 @@ export const modules: ModuleItem[] = [
     iconBg: "bg-purple-500/15",
     points: [
       "Saisie des notes par trimestre ou semestre (par type de classe)",
-      "Bulletin par eleve : moyenne ponderee par coefficients",
+      "Bulletins figes : mentions configurables, PDF par eleve ou toute la classe",
       "Evaluations par classe et examens officiels (CEPD, BEPC, BAC)",
     ],
   },
