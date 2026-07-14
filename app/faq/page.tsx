@@ -1,21 +1,34 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, HelpCircle } from "lucide-react";
+import { pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
 import { faqs } from "@/components/landing/data";
 import { FaqIllustration } from "@/components/landing/illustrations";
 import { LandingFooter } from "@/components/landing/landing-footer";
 import { PageHero } from "@/components/landing/page-hero";
 import { SiteHeader } from "@/components/landing/site-header";
 
-export const metadata: Metadata = {
-  title: "FAQ | Dalibi — Logiciel de gestion scolaire",
+export const metadata = pageMeta({
+  title: "FAQ — questions fréquentes",
   description:
-    "Questions fréquentes sur Dalibi : tarifs, déploiement, trimestres/semestres, examens officiels, écolage, portail parents & élèves, sécurité et open source.",
+    "Questions fréquentes sur Dalibi : tarifs, déploiement hors-ligne, trimestres/semestres, examens officiels (CEPD, BEPC, BAC), écolage, portail parents & élèves, sécurité et open source.",
+  path: "/faq",
+});
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 export default function FaqPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <JsonLd data={faqLd} />
       <SiteHeader />
 
       {/* Hero bleu réutilisable */}
