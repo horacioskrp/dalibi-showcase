@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Check, Coins, GraduationCap, Scale, Server, Users } from "lucide-react";
 import { SiGithub } from "react-icons/si";
@@ -7,11 +7,12 @@ import { PageHero } from "@/components/landing/page-hero";
 import { PricingIllustration } from "@/components/landing/illustrations";
 import { SiteHeader } from "@/components/landing/site-header";
 
-export const metadata: Metadata = {
-  title: "Tarifs | Dalibi — Logiciel de gestion scolaire open source",
+export const metadata = pageMeta({
+  title: "Tarifs — gratuit et open source (GPL v3)",
   description:
-    "Dalibi est open source et gratuit (licence GPL v3). Le logiciel ne peut jamais être vendu ; seul un accompagnement optionnel au déploiement et à la configuration peut faire l'objet d'un devis.",
-};
+    "Dalibi est open source et gratuit sous licence GPL v3 : tous les modules inclus, sans limite d'élèves ni d'établissements, auto-hébergeable. Seul un accompagnement optionnel (déploiement, migration, formation, support) fait l'objet d'un devis.",
+  path: "/tarifs",
+});
 
 const openPoints = [
   "Code source ouvert, auditable et librement réutilisable",

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -14,11 +14,12 @@ import {
   NetworkIllustration, PedagogieIllustration, ShieldIllustration, StatsIllustration,
 } from "@/components/landing/illustrations";
 
-export const metadata: Metadata = {
-  title: "Fonctionnalités | Dalibi — Logiciel de gestion scolaire",
+export const metadata = pageMeta({
+  title: "Fonctionnalités — gestion scolaire complète",
   description:
-    "Toutes les fonctionnalités de Dalibi : pilotage, élèves, notes & bulletins, examens officiels, trésorerie & écolage, présences, documents, portail parents & élèves, sécurité, sauvegardes et déploiement.",
-};
+    "Toutes les fonctionnalités de Dalibi, logiciel open source de gestion scolaire : élèves, notes & bulletins (trimestre/semestre), examens officiels (CEPD, BEPC, BAC), écolage & Mobile Money, présences, statistiques MEPSTA, documents et portail parents & élèves.",
+  path: "/fonctionnalites",
+});
 
 type Editorial = {
   icon: LucideIcon;

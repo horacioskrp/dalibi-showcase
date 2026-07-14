@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -10,11 +10,12 @@ import { LandingFooter } from "@/components/landing/landing-footer";
 import { PageHero } from "@/components/landing/page-hero";
 import { SiteHeader } from "@/components/landing/site-header";
 
-export const metadata: Metadata = {
-  title: "Documentation | Dalibi — Logiciel de gestion scolaire",
+export const metadata = pageMeta({
+  title: "Documentation & guides de déploiement",
   description:
-    "Guides d'installation, de configuration et de déploiement de Dalibi, plus la référence de l'API du portail, la licence GPL v3 et la confidentialité des données.",
-};
+    "Guides d'installation, de configuration et de déploiement de Dalibi (Docker, Kubernetes), référence de l'API du portail parents/élèves, licence GPL v3 et confidentialité des données.",
+  path: "/documentation",
+});
 
 const GITHUB_URL = "https://github.com/horacioskrp/dalibi";
 

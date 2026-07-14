@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Mail, MapPin, MessageSquare } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { ContactForm } from "@/components/landing/contact-form";
@@ -7,11 +7,12 @@ import { LandingFooter } from "@/components/landing/landing-footer";
 import { PageHero } from "@/components/landing/page-hero";
 import { SiteHeader } from "@/components/landing/site-header";
 
-export const metadata: Metadata = {
-  title: "Contact | Dalibi — Logiciel de gestion scolaire",
+export const metadata = pageMeta({
+  title: "Contact — démonstration & devis",
   description:
-    "Contactez l'équipe Dalibi pour une démonstration ou toute question sur la gestion scolaire, l'écolage, les bulletins et le portail parents.",
-};
+    "Contactez l'équipe Dalibi pour une démonstration gratuite ou un devis d'accompagnement : gestion scolaire, écolage, bulletins et portail parents, au Togo et en Afrique de l'Ouest.",
+  path: "/contact",
+});
 
 const infos = [
   { icon: MessageSquare, title: "Demande de démo", text: "Une présentation adaptée à votre établissement." },
