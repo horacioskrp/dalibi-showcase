@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { OG_IMAGE, OG_IMAGE_ALT, SITE_NAME } from "@/lib/site";
+import { OG_IMAGE, OG_IMAGE_ALT, OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH, SITE_NAME } from "@/lib/site";
 
 /**
  * Construit les métadonnées d'une page : titre, description, URL canonique,
@@ -30,7 +30,7 @@ export function pageMeta(opts: {
       url: opts.path,
       title: ogTitle,
       description: opts.description,
-      images: [{ url: OG_IMAGE, alt: OG_IMAGE_ALT }],
+      images: [{ url: OG_IMAGE, alt: OG_IMAGE_ALT, width: OG_IMAGE_WIDTH, height: OG_IMAGE_HEIGHT, type: "image/png" }],
     },
     twitter: {
       card: "summary_large_image",
