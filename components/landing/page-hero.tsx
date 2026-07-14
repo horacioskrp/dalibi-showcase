@@ -15,9 +15,7 @@ type PageHeroProps = {
  * grille en filigrane et orbes animés. Titre + description à gauche,
  * illustration à droite.
  */
-export function PageHero({ badge, title, description, illustration }: PageHeroProps) {
-  const BadgeIcon = badge?.icon;
-
+export function PageHero({ title, description, illustration }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden text-white bg-linear-to-br from-brand-deep via-brand-1 to-brand-2">
       {/* Fonds animés */}
@@ -34,11 +32,6 @@ export function PageHero({ badge, title, description, illustration }: PageHeroPr
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
         <div className={illustration ? "grid md:grid-cols-2 gap-10 items-center" : "max-w-2xl"}>
           <div>
-            {badge && (
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/25 backdrop-blur-sm px-3 py-1 text-sm font-medium mb-5">
-                {BadgeIcon && <BadgeIcon className="w-4 h-4" />} {badge.label}
-              </span>
-            )}
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">{title}</h1>
             {description && <div className="text-lg text-white/85 max-w-lg">{description}</div>}
           </div>
