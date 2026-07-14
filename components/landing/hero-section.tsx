@@ -1,5 +1,4 @@
-import { ArrowRight, BarChart3, BookOpen, CheckCircle2, GraduationCap, NotebookPen, Sparkles, UserCheck, Users, Wallet } from "lucide-react";
-import { SiGithub } from "react-icons/si";
+import { ArrowRight, BarChart3, BookOpen, CheckCircle2, GraduationCap, NotebookPen, UserCheck, Users, Wallet } from "lucide-react";
 
 const modules = [
   { label: "Élèves", icon: Users, grad: "from-blue-500 to-blue-600" },
@@ -17,16 +16,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 items-center">
           {/* Colonne texte */}
           <div>
-            <div className="flex flex-wrap items-center gap-2 gs-fade-up">
-              <span className="badge">
-                <Sparkles className="w-4 h-4" /> Logiciel de gestion scolaire
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1 text-sm font-medium text-muted">
-                <SiGithub className="w-3.5 h-3.5" /> Open source · GPL v3
-              </span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl xl:text-[3.4rem] font-bold leading-[1.06] mt-6 mb-5 gs-fade-up">
+            <h1 className="text-4xl md:text-5xl xl:text-[3.4rem] font-bold leading-[1.06] mb-5 gs-fade-up">
               Pilotez toute votre école depuis un{" "}
               <span className="title-gradient">seul tableau de bord</span>
             </h1>
