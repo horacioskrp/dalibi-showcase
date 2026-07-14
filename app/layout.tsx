@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Dalibi | Logiciel de gestion scolaire tout-en-un",
   description:
     "Dalibi est le logiciel tout-en-un pour moderniser votre établissement : inscriptions, notes, bulletins, trésorerie, présences et portail parents & élèves. Conçu pour les écoles d'Afrique.",
+  verification: {
+    google: "ziFx0N8OItjDSbH7F0fChsvivigUR1PArGRpuSbOCo0",
+  },
 };
 
 export default function RootLayout({
