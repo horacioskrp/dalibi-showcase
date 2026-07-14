@@ -6,6 +6,8 @@ import { JsonLd } from "@/components/json-ld";
 import {
   OG_IMAGE,
   OG_IMAGE_ALT,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_WIDTH,
   PUBLISHER_NAME,
   PUBLISHER_URL,
   SITE_DESCRIPTION,
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     url: "/",
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
-    images: [{ url: OG_IMAGE, alt: OG_IMAGE_ALT }],
+    images: [{ url: OG_IMAGE, alt: OG_IMAGE_ALT, width: OG_IMAGE_WIDTH, height: OG_IMAGE_HEIGHT, type: "image/png" }],
   },
   twitter: {
     card: "summary_large_image",
