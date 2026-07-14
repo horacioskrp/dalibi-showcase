@@ -47,9 +47,11 @@ export function SiteHeader() {
             <SiGithub className="w-[18px] h-[18px]" />
           </a>
           <ThemeToggle />
-          <Link href="/contact" className="hidden sm:inline-flex btn btn-primary text-sm py-2.5">
-            Demander un devis <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="hidden lg:block">
+            <Link href="/contact" className="btn btn-primary text-sm py-2.5">
+              Demander un devis <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
