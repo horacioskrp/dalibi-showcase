@@ -31,6 +31,10 @@ export const SITE_KEYWORDS = [
   "Dalibi",
 ];
 
+/** Image utilisée pour les partages (Open Graph / Twitter). */
+export const OG_IMAGE = "/icon.svg";
+export const OG_IMAGE_ALT = `${SITE_NAME} — logo`;
+
 /** Réseaux / profils officiels (schema.org sameAs). */
 export const SITE_SAMEAS = ["https://github.com/horacioskrp/dalibi"];
 

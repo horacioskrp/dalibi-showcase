@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { JsonLd } from "@/components/json-ld";
 import {
+  OG_IMAGE,
+  OG_IMAGE_ALT,
   PUBLISHER_NAME,
   PUBLISHER_URL,
   SITE_DESCRIPTION,
@@ -47,11 +49,13 @@ export const metadata: Metadata = {
     url: "/",
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
+    images: [{ url: OG_IMAGE, alt: OG_IMAGE_ALT }],
   },
   twitter: {
     card: "summary_large_image",
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
