@@ -195,26 +195,40 @@ details[open] summary svg { transform: rotate(90deg); }
 summary svg { transition: transform 0.22s ease; }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
 }
+.marquee-track { will-change: transform; }
 
-/* Flottement doux des cartes du hero */
+/* Flottement doux des cartes du hero (transform GPU) */
 @keyframes float-soft {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-9px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -9px, 0); }
 }
-.float-soft { animation: float-soft 4s ease-in-out infinite; }
-.float-soft-delayed { animation: float-soft 4.8s ease-in-out infinite 0.9s; }
+.float-soft,
+.float-soft-delayed {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.float-soft { animation: float-soft 5s ease-in-out infinite; }
+.float-soft-delayed { animation: float-soft 6s ease-in-out infinite 0.9s; }
 
-/* Orbes dérivants en fond des hero de page */
+/* Orbes dérivants en fond des hero de page.
+   Translate uniquement (pas de scale) + calque GPU : évite de recalculer
+   le flou (blur-3xl) à chaque frame, source de saccades. */
 @keyframes hero-orb {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(26px, -20px) scale(1.14); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(24px, -18px, 0); }
 }
-.hero-orb-a { animation: hero-orb 15s ease-in-out infinite; }
-.hero-orb-b { animation: hero-orb 19s ease-in-out infinite reverse; }
-.hero-orb-c { animation: hero-orb 17s ease-in-out infinite 2s; }
+.hero-orb-a,
+.hero-orb-b,
+.hero-orb-c {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.hero-orb-a { animation: hero-orb 20s ease-in-out infinite; }
+.hero-orb-b { animation: hero-orb 24s ease-in-out infinite reverse; }
+.hero-orb-c { animation: hero-orb 22s ease-in-out infinite 2s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

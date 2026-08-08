@@ -19,11 +19,14 @@ function registerFadeUps(gsap: typeof import("gsap").gsap) {
   for (const element of elements) {
     gsap.from(element, {
       opacity: 0,
-      y: 44,
-      duration: 0.72,
-      ease: "power3.out",
+      y: 28,
+      duration: 0.8,
+      ease: "power2.out",
+      force3D: true,
       immediateRender: false,
-      scrollTrigger: { trigger: element, start: "top 88%", once: true },
+      willChange: "transform, opacity",
+      onComplete: () => gsap.set(element, { willChange: "auto", clearProps: "transform" }),
+      scrollTrigger: { trigger: element, start: "top 90%", once: true },
     });
   }
 }
@@ -33,12 +36,15 @@ function registerStaggerUps(gsap: typeof import("gsap").gsap) {
   for (const parent of parents) {
     gsap.from(parent.children, {
       opacity: 0,
-      y: 36,
-      duration: 0.6,
-      stagger: 0.12,
+      y: 24,
+      duration: 0.7,
+      stagger: 0.1,
       ease: "power2.out",
+      force3D: true,
       immediateRender: false,
-      scrollTrigger: { trigger: parent, start: "top 86%", once: true },
+      willChange: "transform, opacity",
+      onComplete: () => gsap.set(parent.children, { willChange: "auto", clearProps: "transform" }),
+      scrollTrigger: { trigger: parent, start: "top 88%", once: true },
     });
   }
 }
@@ -48,15 +54,18 @@ function registerModuleCards(gsap: typeof import("gsap").gsap) {
   cards.forEach((card, index) => {
     gsap.fromTo(
       card,
-      { opacity: 0, y: 32 },
+      { opacity: 0, y: 24 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.55,
-        delay: index * 0.08,
+        duration: 0.6,
+        delay: index * 0.07,
         ease: "power2.out",
+        force3D: true,
         immediateRender: false,
-        scrollTrigger: { trigger: card, start: "top 88%", once: true },
+        willChange: "transform, opacity",
+        onComplete: () => gsap.set(card, { willChange: "auto", clearProps: "transform" }),
+        scrollTrigger: { trigger: card, start: "top 90%", once: true },
       },
     );
   });
