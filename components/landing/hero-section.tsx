@@ -1,13 +1,4 @@
-import { ArrowRight, BarChart3, BookOpen, CheckCircle2, GraduationCap, NotebookPen, UserCheck, Users, Wallet } from "lucide-react";
-
-const modules = [
-  { label: "Élèves", icon: Users, grad: "from-blue-500 to-blue-600" },
-  { label: "Notes & Bulletins", icon: NotebookPen, grad: "from-violet-500 to-purple-600" },
-  { label: "Examens", icon: GraduationCap, grad: "from-indigo-500 to-blue-600" },
-  { label: "Présences", icon: UserCheck, grad: "from-emerald-500 to-teal-600" },
-  { label: "Comptabilité", icon: Wallet, grad: "from-amber-500 to-orange-600" },
-  { label: "Statistiques", icon: BarChart3, grad: "from-sky-500 to-blue-600" },
-];
+import { ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -36,92 +27,53 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Colonne aperçu produit — fidèle au tableau de bord Dalibi */}
-          <div className="relative gs-fade-up">
+          {/* Colonne aperçu produit — Dalibi sur ordinateur, tablette et mobile */}
+          <div className="relative gs-fade-up pt-6 pb-14 sm:pb-8 md:pl-10">
             <div className="absolute -inset-6 bg-linear-to-tr from-brand-3/20 to-brand-1/10 blur-3xl rounded-[2rem] -z-10" />
 
             {/* Pastilles décoratives */}
-            <span className="hidden md:block absolute -top-3 right-12 w-3 h-3 rounded-full bg-brand-2/60" aria-hidden />
-            <span className="hidden md:block absolute bottom-10 -left-3 w-2.5 h-2.5 rounded-full bg-emerald-400/70" aria-hidden />
+            <span className="hidden md:block absolute -top-1 right-10 w-3 h-3 rounded-full bg-brand-2/60" aria-hidden />
+            <span className="hidden md:block absolute bottom-16 left-2 w-2.5 h-2.5 rounded-full bg-emerald-400/70" aria-hidden />
 
-            {/* Carte flottante : bulletin validé */}
-            <div className="float-soft hidden sm:flex items-center gap-3 absolute -top-5 -right-3 md:-right-6 z-20 card px-3.5 py-2.5 shadow-xl">
-              <div className="inline-flex p-2 rounded-xl bg-linear-to-br from-violet-500 to-purple-500 text-white shadow-md shadow-violet-500/30">
-                <GraduationCap className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-semibold leading-none">Bulletin validé</div>
-                <div className="text-[11px] text-muted mt-0.5">Moyenne 14,2 · 3ᵉ A</div>
-              </div>
-              <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-            </div>
-
-            {/* Carte flottante : paiement reçu */}
-            <div className="float-soft-delayed hidden sm:flex items-center gap-3 absolute -bottom-5 -left-3 md:-left-6 z-20 card px-3.5 py-2.5 shadow-xl">
-              <div className="inline-flex p-2 rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-white shadow-md shadow-emerald-500/30">
-                <Wallet className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-semibold leading-none">Paiement reçu</div>
-                <div className="text-[11px] text-muted mt-0.5">+ 75 000 F · reçu n°1042</div>
-              </div>
-              <ArrowRight className="w-5 h-5 text-emerald-600 -rotate-45" />
-            </div>
-
-            {/* Carte flottante : élèves */}
-            <div className="float-soft hidden sm:flex items-center gap-3 absolute top-16 -left-4 md:-left-9 z-20 card px-3.5 py-2.5 shadow-xl">
-              <div className="inline-flex p-2 rounded-xl bg-linear-to-br from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/30">
-                <Users className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-semibold leading-none">Nouvel élève</div>
-                <div className="text-[11px] text-muted mt-0.5">Inscription enregistrée</div>
-              </div>
-              <CheckCircle2 className="w-5 h-5 text-blue-500" />
-            </div>
-
-            {/* Fenêtre application — page d'accueil */}
-            <div className="card overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-surface">
-                <span className="w-3 h-3 rounded-full bg-red-400/70" />
-                <span className="w-3 h-3 rounded-full bg-amber-400/70" />
-                <span className="w-3 h-3 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-xs text-muted">Dalibi — Accueil</span>
-              </div>
-
-              <div className="p-4 sm:p-5 space-y-4">
-                {/* En-tête façon page d'accueil */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-blue-600">
-                    <BookOpen className="w-4 h-4" />
-                    <span className="text-sm font-bold">Dalibi</span>
-                  </div>
-                  <span className="inline-flex items-center text-[10px] font-medium text-white bg-blue-600 rounded-lg px-2 py-1">
-                    Se connecter
-                  </span>
+            {/* Tablette (Web) — en retrait, derrière à gauche */}
+            <div className="hidden md:block absolute top-4 -left-6 w-[46%] z-0 rotate-[-7deg]">
+              <div className="rounded-[0.85rem] bg-neutral-900 p-2 shadow-2xl ring-1 ring-black/10">
+                <div className="rounded-[0.6rem] overflow-hidden bg-white">
+                  <img src="/dalibi-showcase-tablet.png" alt="Dalibi sur tablette" className="w-full aspect-[4/3] object-cover object-left-top" />
                 </div>
+              </div>
+              <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-white shadow-md">
+                Web · Tablette
+              </span>
+            </div>
 
-                {/* Titre */}
-                <div className="text-center pt-1">
-                  <div className="text-base font-bold">
-                    Bienvenue sur <span className="text-blue-600">Dalibi</span>
-                  </div>
-                  <div className="text-[11px] text-muted mt-0.5">Choisissez un module pour commencer.</div>
+            {/* Ordinateur (Web) — moniteur à bordure noire, élément principal */}
+            <div className="relative z-10 max-w-[560px] ml-auto">
+              {/* Cadre écran noir — la capture occupe tout l'écran */}
+              <div className="rounded-2xl bg-neutral-900 p-2.5 shadow-2xl ring-1 ring-black/40">
+                <div className="rounded-lg overflow-hidden bg-white">
+                  <img src="/dalibi-showcase.png" alt="Dalibi sur ordinateur (version web)" className="w-full h-auto block" />
                 </div>
+              </div>
+              {/* Pied / stand du moniteur */}
+              <div className="hidden sm:block mx-auto h-4 w-16 bg-linear-to-b from-neutral-700 to-neutral-800" />
+              <div className="hidden sm:block mx-auto h-1.5 w-40 rounded-full bg-neutral-800" />
+              <span className="absolute top-16 -right-2 md:right-4 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-600 text-white shadow-md z-10">
+                Web · Ordinateur
+              </span>
+            </div>
 
-                {/* Cartes de modules */}
-                <div className="grid grid-cols-3 gap-2.5">
-                  {modules.map((m) => (
-                    <div key={m.label} className="rounded-xl border border-border p-2.5">
-                      <div className={`inline-flex p-1.5 rounded-lg bg-linear-to-br ${m.grad} text-white shadow-sm`}>
-                        <m.icon className="w-3.5 h-3.5" />
-                      </div>
-                      <div className="text-[11px] font-semibold mt-1.5 leading-tight">{m.label}</div>
-                      <div className="mt-1 inline-flex items-center gap-0.5 text-[9px] font-medium text-blue-600">
-                        Se connecter <ArrowRight className="w-2.5 h-2.5" />
-                      </div>
-                    </div>
-                  ))}
+            {/* Téléphone (Mobile) — style iPhone 17, au premier plan */}
+            <div className="absolute -bottom-3 sm:-bottom-5 right-2 sm:-right-1 md:right-4 w-[32%] max-w-[160px] z-20">
+              <div className="relative rounded-[1.5rem] bg-linear-to-b from-neutral-700 to-neutral-900 p-[6px] shadow-2xl ring-1 ring-white/10">
+                {/* Boutons latéraux (titane) */}
+                <span className="absolute -left-[2px] top-[22%] h-9 w-[2px] rounded-full bg-neutral-600" aria-hidden />
+                <span className="absolute -right-[2px] top-[30%] h-11 w-[2px] rounded-full bg-neutral-600" aria-hidden />
+                {/* Écran */}
+                <div className="relative rounded-[1.3rem] overflow-hidden bg-white">
+                  {/* Dynamic Island */}
+                  <span className="absolute top-1.5 left-1/2 -translate-x-1/2 h-3.5 w-11 rounded-full bg-black z-10 shadow-sm" aria-hidden />
+                  <img src="/dalibi-showcase-mobile.png" alt="Dalibi sur mobile" className="w-full aspect-[9/18] object-cover object-top" />
                 </div>
               </div>
             </div>
