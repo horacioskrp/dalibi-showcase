@@ -13,8 +13,8 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg text-muted max-w-xl mb-8 gs-fade-up">
-              Inscriptions, notes, bulletins, trésorerie, présences et portail parents : Dalibi
-              réunit toute la vie scolaire dans une plateforme claire, rapide et sécurisée.
+              Inscriptions, notes, bulletins, trésorerie, paie, présences et portail parents :
+              Dalibi réunit toute la vie scolaire dans une plateforme claire, rapide et sécurisée.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 gs-fade-up">

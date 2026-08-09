@@ -8,6 +8,7 @@ const iconGradients: Record<string, string> = {
   bulletins: "from-purple-500 to-fuchsia-500",
   tresorerie: "from-fuchsia-500 to-pink-500",
   presences: "from-emerald-500 to-teal-500",
+  personnel: "from-cyan-500 to-sky-500",
   documents: "from-amber-500 to-orange-500",
   securite: "from-blue-500 to-cyan-500",
 };
@@ -18,7 +19,7 @@ export function ModulesSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="eyebrow mb-3 gs-fade-up">Fonctionnalités</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gs-fade-up">Six modules intégrés</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gs-fade-up">Sept modules intégrés</h2>
           <p className="text-lg text-muted gs-fade-up">
             Couvrir tous les besoins administratifs, pédagogiques et financiers, sans logiciel tiers.
           </p>

@@ -12,6 +12,7 @@ import {
 } from "react-icons/si";
 import {
   BadgeCheck,
+  Briefcase,
   Building2,
   DatabaseBackup,
   Gauge,
@@ -283,6 +284,20 @@ export const modules: ModuleItem[] = [
       "Appel par classe, date et seance (matin / apres-midi)",
       "Demandes de permission avec auto-excusement des absences",
       "Statistiques de presence par eleve et par periode",
+    ],
+  },
+  {
+    id: "personnel",
+    title: "Personnel & Paie",
+    icon: Briefcase,
+    subtitle: "Ressources humaines",
+    color: "from-cyan-500/20 to-sky-500/10",
+    iconColor: "text-cyan-600",
+    iconBg: "bg-cyan-500/15",
+    points: [
+      "Fiches employes, grilles salariales et primes tracees",
+      "Cycles de paie mensuels : bulletins PDF, validation et decaissement en caisse",
+      "Anciennete, CNSS et ITS calcules automatiquement (parametrables)",
     ],
   },
   {
